@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketPilot | Transactions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">▥</div>
+                <h1>PocketPilot</h1>
+                <p>Take control of your money.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="index.html">
+                    <span class="nav-icon">⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="transactions.html"
+                   class="active"
+                   aria-current="page">
+                    <span class="nav-icon">☷</span>
+                    Transactions
+                </a>
+
+                <a href="goals.html">
+                    <span class="nav-icon">◎</span>
+                    Savings Goals
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <span>PocketPilot</span>
+                <p>Your personal finance companion</p>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+
+            <div class="dashboard-heading">
+                <h2>Transactions</h2>
+                <p>Keep track of your income and expenses.</p>
+            </div>
+
+            <!-- Add Transaction -->
+            <section>
+                <h3>Add a Transaction</h3>
+
+                <form id="transaction-form">
+
+                    <label for="description">Description</label>
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="e.g. Groceries"
+                        required
+                    >
+
+                    <label for="amount">Amount ($)</label>
+                    <input
+                        type="number"
+                        id="amount"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+
+                    <label for="type">Transaction Type</label>
+                    <select id="type">
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="Food">Food</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="transaction-date">Date</label>
+                    <input
+                        type="date"
+                        id="transaction-date"
+                        required
+                    >
+
+                    <button type="submit">
+                        Add Transaction
+                    </button>
+
+                </form>
+            </section>
+
+            <!-- Transaction History -->
+            <section>
+                <h3>Transaction History</h3>
+
+                <p id="empty-message">
+                    No transactions added yet.
+                </p>
+
+                <ul id="transaction-list"></ul>
+
+                <button
+                    type="button"
+                    id="clear-all-button"
+                    style="
+                        background-color: #dc2626;
+                        color: white;
+                        border: none;
+                        border-radius: 8px;
+                        padding: 12px 20px;
+                        margin-top: 20px;
+                        cursor: pointer;
+                        font-size: 14px;
+                    ">
+                    Clear All Data
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
